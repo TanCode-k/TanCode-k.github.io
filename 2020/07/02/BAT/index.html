@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/12 | Kingken的博客</title>
+  <title>bat笔记 | Kingken的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="testtesttest">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kingken的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/12/index.html">
+  <meta name="description" content="bat时间获取系统时间1234@echo offset dt&#x3D;%date%%time%echo %dt%pause  2020&#x2F;07&#x2F;22 周三 8:12:23.06  用时间创建文件夹123456789@echo offset ymd&#x3D;%date:~0,4%%date:~5,2%%date:~8,2%set hms&#x3D;%time:~0,2%%time:~3,2%%time:~6,2%%time:~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bat笔记">
+<meta property="og:url" content="http://yoursite.com/2020/07/02/BAT/index.html">
 <meta property="og:site_name" content="Kingken的博客">
-<meta property="og:description" content="testtesttest">
+<meta property="og:description" content="bat时间获取系统时间1234@echo offset dt&#x3D;%date%%time%echo %dt%pause  2020&#x2F;07&#x2F;22 周三 8:12:23.06  用时间创建文件夹123456789@echo offset ymd&#x3D;%date:~0,4%%date:~5,2%%date:~8,2%set hms&#x3D;%time:~0,2%%time:~3,2%%time:~6,2%%time:~">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-22T00:56:56.390Z">
 <meta property="article:author" content="Kingken">
-<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Launguage">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kingken的博客" type="application/atom+xml">
@@ -167,205 +169,254 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BAT" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bat笔记
+    </h1>
+  
+
+        
+        <a href="/2020/07/02/BAT/" class="archive-article-date">
+  	<time datetime="2020-07-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+	 
+        <h1 id="bat"><a href="#bat" class="headerlink" title="bat"></a>bat</h1><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><h3 id="获取系统时间"><a href="#获取系统时间" class="headerlink" title="获取系统时间"></a>获取系统时间</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> dt=<span class="variable">%date%</span><span class="variable">%time%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%dt%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2020/07/22 周三 8:12:23.06</p>
+</blockquote>
+<h3 id="用时间创建文件夹"><a href="#用时间创建文件夹" class="headerlink" title="用时间创建文件夹"></a>用时间创建文件夹</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> ymd=<span class="variable">%date:~0,4%</span><span class="variable">%date:~5,2%</span><span class="variable">%date:~8,2%</span></span><br><span class="line"><span class="built_in">set</span> hms=<span class="variable">%time:~0,2%</span><span class="variable">%time:~3,2%</span><span class="variable">%time:~6,2%</span><span class="variable">%time:~9,2%</span></span><br><span class="line"><span class="comment">rem 或者 set hms=%time:~-11,2%%time:~-8,2%%time:~-5,2%%time:~-2,2%</span></span><br><span class="line"><span class="built_in">set</span> dt=<span class="variable">%ymd%</span><span class="variable">%hms%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%dt%</span></span><br><span class="line"><span class="built_in">mkdir</span> "<span class="variable">%dt%</span>"</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>20200722 8122309</p>
+</blockquote>
+<h3 id="时间汇总"><a href="#时间汇总" class="headerlink" title="时间汇总"></a>时间汇总</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">%CD%</span>                    #代表当前目录的字符串</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%DATE%</span>                  #当前日期</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%TIME%</span>                  #当前时间</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="无参"><a href="#无参" class="headerlink" title="无参"></a>无参</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> **i <span class="keyword">in</span>(<span class="built_in">set</span>) <span class="keyword">do</span> commond</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>%%i 为变量</p>
+</li>
+<li><p>set为一个文件或者一组文件，其实就是一个集合。可用通配符，比如*.txt</p>
+</li>
+<li><p>command 是要执行的命令</p>
+</li>
+</ul>
+<h3 id="含有-L的for"><a href="#含有-L的for" class="headerlink" title="含有/L的for"></a>含有/L的for</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> /L <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="built_in">start</span>,step,end) <span class="keyword">do</span> command</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>/L表示以增量形式从start到end的一个数字序列，步长是step，就是每次的增量是step</p>
+</li>
+<li><p>例：(1,1,5) 将产生序列 1 2 3 4 5，(1,2,9) 将产生1 3 5 7 9序列。</p>
+</li>
+</ul>
+<h3 id="含有-F的for"><a href="#含有-F的for" class="headerlink" title="含有/F的for"></a>含有/F的for</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> (file) <span class="keyword">DO</span> command</span><br><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> ("string") <span class="keyword">DO</span> command</span><br><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> ('command') <span class="keyword">DO</span> command</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>file代表一个或多个文件</p>
+</li>
+<li><p>string 代表字符串</p>
+</li>
+<li><p>command代表命令</p>
+</li>
+<li><p>[“options”] 可选</p>
+<ul>
+<li>delims:用来告诉for每一行应该拿什么作为分隔符，默认的分隔符是空格和tab键</li>
+<li>tokens:当通过delims将每一行分为更小的元素时，由它来控制要取哪一个或哪几个</li>
+<li>skip:skip就是要忽略文件的前多少行</li>
+<li>eol:用来指定当一行以什么符号开始时，就忽略它。</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a>获取当前目录</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="批处理文件所在路径-当前的盘符及路径"><a href="#批处理文件所在路径-当前的盘符及路径" class="headerlink" title="批处理文件所在路径,当前的盘符及路径"></a>批处理文件所在路径,当前的盘符及路径</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前正在运行的批处理文件所在路径：%~dp0</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="当前的盘符及路径的短文件名格式"><a href="#当前的盘符及路径的短文件名格式" class="headerlink" title="当前的盘符及路径的短文件名格式"></a>当前的盘符及路径的短文件名格式</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off  </span><br><span class="line"><span class="built_in">echo</span> 当前的盘符及路径的短文件名格式:%~sdp0  </span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">del</span> a.txt</span><br><span class="line"></span><br><span class="line">注意：指定路径会删除该路径下所有文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行另一个批处理文件"><a href="#执行另一个批处理文件" class="headerlink" title="执行另一个批处理文件"></a>执行另一个批处理文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> c:\code\run.bat</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动、拷贝文件、文件夹"><a href="#移动、拷贝文件、文件夹" class="headerlink" title="移动、拷贝文件、文件夹"></a>移动、拷贝文件、文件夹</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">move</span> c:\a.txt c:\code\a.txt </span><br><span class="line"></span><br><span class="line"><span class="built_in">copy</span> c:\code\a.txt c:\a.txt </span><br><span class="line"></span><br><span class="line"><span class="built_in">rd</span> c:\code\abc\abc   <span class="built_in">REM</span> 删除非空文件夹</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="增加入参"><a href="#增加入参" class="headerlink" title="增加入参"></a>增加入参</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"> <span class="built_in">type</span> %<span class="number">1</span> </span><br><span class="line"> <span class="built_in">type</span> %<span class="number">2</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">cmd</span>为 run.bat a.txt b.txt</span><br><span class="line">控制台会显示出a和b的文件内容</span><br></pre></td></tr></table></figure>
+
+<h3 id="GOTO-语句"><a href="#GOTO-语句" class="headerlink" title="GOTO 语句"></a>GOTO 语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@ECHO OFF</span><br><span class="line">GOTO SECOND</span><br><span class="line">:FIRST</span><br><span class="line">echo I AM FIRST</span><br><span class="line">:SECOND</span><br><span class="line">echo I AM SECOND</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/Android%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="archive-article-date">
-  	<time datetime="2019-12-23T00:12:20.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/Android%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%A1%8C/">Android 相关命令行</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Launguage</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/02/BAT/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/class%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2019-12-23T00:12:20.239Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/23/Android%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%A1%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 相关命令行</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/class%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">Class 文件结构</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="BAT" data-title="bat笔记" data-url="http://yoursite.com/2020/07/02/BAT/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2020/07/02/BAT/", 
+    sourceId: "BAT",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" class="archive-article-date">
-  	<time datetime="2019-12-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6/">统计学</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Data Analyst</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Math</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/classloader%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-12-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/classloader%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B/">ClassLoader 加载流程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/22/hello-world/" class="archive-article-date">
-  	<time datetime="2019-12-22T08:03:50.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
-</a>
-        </div>
-    	 
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/07/02/BAT/",
+  owner: 'TanCode-k',
+  repo: 'tancode-k.github.io',
+  oauth: {
+    client_id: 'b2947fdfdadcefe9ee18',
+    client_secret: '8e3e5d101bb849049e94e38af502e88ed045ad38',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -388,8 +439,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -169,6 +169,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-BAT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/02/BAT/">bat笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/02/BAT/" class="archive-article-date">
+  	<time datetime="2020-07-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+	 
+        <h1 id="bat"><a href="#bat" class="headerlink" title="bat"></a>bat</h1><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><h3 id="获取系统时间"><a href="#获取系统时间" class="headerlink" title="获取系统时间"></a>获取系统时间</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> dt=<span class="variable">%date%</span><span class="variable">%time%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%dt%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2020/07/22 周三 8:12:23.06</p>
+</blockquote>
+<h3 id="用时间创建文件夹"><a href="#用时间创建文件夹" class="headerlink" title="用时间创建文件夹"></a>用时间创建文件夹</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> ymd=<span class="variable">%date:~0,4%</span><span class="variable">%date:~5,2%</span><span class="variable">%date:~8,2%</span></span><br><span class="line"><span class="built_in">set</span> hms=<span class="variable">%time:~0,2%</span><span class="variable">%time:~3,2%</span><span class="variable">%time:~6,2%</span><span class="variable">%time:~9,2%</span></span><br><span class="line"><span class="comment">rem 或者 set hms=%time:~-11,2%%time:~-8,2%%time:~-5,2%%time:~-2,2%</span></span><br><span class="line"><span class="built_in">set</span> dt=<span class="variable">%ymd%</span><span class="variable">%hms%</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%dt%</span></span><br><span class="line"><span class="built_in">mkdir</span> "<span class="variable">%dt%</span>"</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>20200722 8122309</p>
+</blockquote>
+<h3 id="时间汇总"><a href="#时间汇总" class="headerlink" title="时间汇总"></a>时间汇总</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">%CD%</span>                    #代表当前目录的字符串</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%DATE%</span>                  #当前日期</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%TIME%</span>                  #当前时间</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="无参"><a href="#无参" class="headerlink" title="无参"></a>无参</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> **i <span class="keyword">in</span>(<span class="built_in">set</span>) <span class="keyword">do</span> commond</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>%%i 为变量</p>
+</li>
+<li><p>set为一个文件或者一组文件，其实就是一个集合。可用通配符，比如*.txt</p>
+</li>
+<li><p>command 是要执行的命令</p>
+</li>
+</ul>
+<h3 id="含有-L的for"><a href="#含有-L的for" class="headerlink" title="含有/L的for"></a>含有/L的for</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> /L <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="built_in">start</span>,step,end) <span class="keyword">do</span> command</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>/L表示以增量形式从start到end的一个数字序列，步长是step，就是每次的增量是step</p>
+</li>
+<li><p>例：(1,1,5) 将产生序列 1 2 3 4 5，(1,2,9) 将产生1 3 5 7 9序列。</p>
+</li>
+</ul>
+<h3 id="含有-F的for"><a href="#含有-F的for" class="headerlink" title="含有/F的for"></a>含有/F的for</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> (file) <span class="keyword">DO</span> command</span><br><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> ("string") <span class="keyword">DO</span> command</span><br><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> /F ["options"] <span class="variable">%%i</span> <span class="keyword">IN</span> ('command') <span class="keyword">DO</span> command</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>file代表一个或多个文件</p>
+</li>
+<li><p>string 代表字符串</p>
+</li>
+<li><p>command代表命令</p>
+</li>
+<li><p>[“options”] 可选</p>
+<ul>
+<li>delims:用来告诉for每一行应该拿什么作为分隔符，默认的分隔符是空格和tab键</li>
+<li>tokens:当通过delims将每一行分为更小的元素时，由它来控制要取哪一个或哪几个</li>
+<li>skip:skip就是要忽略文件的前多少行</li>
+<li>eol:用来指定当一行以什么符号开始时，就忽略它。</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a>获取当前目录</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="批处理文件所在路径-当前的盘符及路径"><a href="#批处理文件所在路径-当前的盘符及路径" class="headerlink" title="批处理文件所在路径,当前的盘符及路径"></a>批处理文件所在路径,当前的盘符及路径</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前正在运行的批处理文件所在路径：%~dp0</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="当前的盘符及路径的短文件名格式"><a href="#当前的盘符及路径的短文件名格式" class="headerlink" title="当前的盘符及路径的短文件名格式"></a>当前的盘符及路径的短文件名格式</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> off  </span><br><span class="line"><span class="built_in">echo</span> 当前的盘符及路径的短文件名格式:%~sdp0  </span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">del</span> a.txt</span><br><span class="line"></span><br><span class="line">注意：指定路径会删除该路径下所有文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行另一个批处理文件"><a href="#执行另一个批处理文件" class="headerlink" title="执行另一个批处理文件"></a>执行另一个批处理文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> c:\code\run.bat</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动、拷贝文件、文件夹"><a href="#移动、拷贝文件、文件夹" class="headerlink" title="移动、拷贝文件、文件夹"></a>移动、拷贝文件、文件夹</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">move</span> c:\a.txt c:\code\a.txt </span><br><span class="line"></span><br><span class="line"><span class="built_in">copy</span> c:\code\a.txt c:\a.txt </span><br><span class="line"></span><br><span class="line"><span class="built_in">rd</span> c:\code\abc\abc   <span class="built_in">REM</span> 删除非空文件夹</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="增加入参"><a href="#增加入参" class="headerlink" title="增加入参"></a>增加入参</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"> <span class="built_in">type</span> %<span class="number">1</span> </span><br><span class="line"> <span class="built_in">type</span> %<span class="number">2</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">cmd</span>为 run.bat a.txt b.txt</span><br><span class="line">控制台会显示出a和b的文件内容</span><br></pre></td></tr></table></figure>
+
+<h3 id="GOTO-语句"><a href="#GOTO-语句" class="headerlink" title="GOTO 语句"></a>GOTO 语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@ECHO OFF</span><br><span class="line">GOTO SECOND</span><br><span class="line">:FIRST</span><br><span class="line">echo I AM FIRST</span><br><span class="line">:SECOND</span><br><span class="line">echo I AM SECOND</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Launguage</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/02/BAT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android相关命令行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -679,7 +814,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Kingken
+    		&copy; 2020 Kingken
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -788,6 +923,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Launguage</a>
               </li>
             
             <div class="clearfix"></div>
